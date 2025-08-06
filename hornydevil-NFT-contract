@@ -32,11 +32,7 @@ contract HornyDevilNFT is ERC721, ERC721URIStorage, Ownable {
         super._burn(tokenId);
     }
 
-    // Burn an NFT (only token owner or approved)
-    function burn(uint256 tokenId) public {
-        require(_isApprovedOrOwner(msg.sender, tokenId), "Caller is not owner nor approved");
-        _burn(tokenId);
-    }
+  
 
     // Override supportsInterface for ERC721 and ERC721URIStorage
     function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721URIStorage) returns (bool) {
